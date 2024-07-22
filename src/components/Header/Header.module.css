@@ -1,4 +1,7 @@
 .mainHeader {
+
+  margin-top: 60px;
+
   h1 {
     background-color: #D4BDAC;
     position: absolute;
@@ -9,7 +12,8 @@
     top: 0;
     left: 0;
     box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;
-
+    max-height: 60px;
+    overflow: hidden;
   }
 
   nav{
@@ -54,6 +58,7 @@
 
 @media (min-width: 768px) {
   .mainHeader {
+    margin-top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
