@@ -1,0 +1,36 @@
+.mainFooter {
+  background-color: #536493;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mainFooterNav{
+  list-style: none;
+
+  li {
+    margin-bottom: .5rem;
+  }
+
+  a {
+    color: white;
+
+    &:active,
+    &:hover {
+      color: #FFF1DB;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  
+  .mainFooter {
+    >div:last-child {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
