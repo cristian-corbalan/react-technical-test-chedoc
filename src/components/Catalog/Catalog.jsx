@@ -24,9 +24,9 @@ export default function Catalog () {
       let catalog = [];
 
       if (section === 'series') {
-        catalog = data.entries.filter(entrie => entrie.programType === 'series');
+        catalog = data.entries.filter(entrie => entrie.programType === 'series' && entrie.releaseYear >= 2010);
       } else {
-        catalog = data.entries.filter(entrie => entrie.programType === 'movie');
+        catalog = data.entries.filter(entrie => entrie.programType === 'movie' && entrie.releaseYear >= 2010);
       }
 
       catalog = catalog.slice(0, 19);
