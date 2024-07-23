@@ -1,3 +1,4 @@
+import Catalog from './components/Catalog/Catalog.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Header from './components/Header/Header.jsx';
 import './App.css';
@@ -12,7 +13,7 @@ function App () {
       <Header />
 
       {section === 'home' && <Home />}
-      {(section === 'movies' || section === 'series') && <p>Catalog</p>}
+      {(section === 'movies' || section === 'series') && <Catalog/>}
 
       <Footer />
     </>
