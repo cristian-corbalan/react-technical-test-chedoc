@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import CatalogList from '../CatalogList/CatalogList.jsx';
 import styles from './Catalog.module.css';
 
 export default function Catalog () {
@@ -35,6 +36,7 @@ export default function Catalog () {
       <h1 className={styles.catalogTitle}>{title}</h1>
 
       {isLoading && <p>Fetching {section}...</p>}
+      {!isLoading && <CatalogList catalog={catalog}/>}
     </main>
   );
 }
