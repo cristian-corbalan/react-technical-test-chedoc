@@ -1,10 +1,10 @@
 import styles from './CatalogListItem.module.css';
 
-export default function CatalogListItem ({ item }) {
+export default function CatalogListItem ({ item, onShowModal }) {
   const imageSrc = item.images['Poster Art'].url;
   return (
     <li className={styles.item}>
-      <a href="#" className={styles.link}>
+      <a href="#" className={styles.link} onClick={onShowModal}>
         <div className={styles.imgContainer}>
           <img src={imageSrc} alt={item.title} />
         </div>

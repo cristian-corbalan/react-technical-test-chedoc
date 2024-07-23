@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import CatalogList from '../CatalogList/CatalogList.jsx';
+import Modal from '../Modal/Modal.jsx';
 import styles from './Catalog.module.css';
 
 export default function Catalog () {
   const [catalog, setCatalog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const modal = useRef();
   const section = useSelector(state => state.ui.section);
   const title = section === 'movies' ? 'Popular movies' : 'Popular series';
 
@@ -46,12 +48,20 @@ export default function Catalog () {
     })();
   }, [section, setCatalog]);
 
+  function handleShowModal () {
+    modal.current.showModal();
+  }
+
   return (
     <main>
       <h1 className={styles.catalogTitle}>{title}</h1>
 
       {isLoading && <p>Fetching {section}...</p>}
-      {!isLoading && <CatalogList catalog={catalog}/>}
+      {!isLoading && <CatalogList onShowModal={handleShowModal} catalog={catalog}/>}
+
+      <Modal ref={modal}>
+        Content
+      </Modal>
     </main>
   );
 }
