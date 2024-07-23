@@ -21,11 +21,17 @@ export default function Catalog () {
 
       const data = await response.json();
 
+      let catalog = [];
+
       if (section === 'series') {
-        setCatalog(data.entries.filter(entrie => entrie.programType === 'series'));
+        catalog = data.entries.filter(entrie => entrie.programType === 'series');
       } else {
-        setCatalog(data.entries.filter(entrie => entrie.programType === 'movie'));
+        catalog = data.entries.filter(entrie => entrie.programType === 'movie');
       }
+
+      catalog = catalog.slice(0, 19);
+
+      setCatalog(catalog);
 
       setIsLoading(false);
     })();
