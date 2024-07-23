@@ -33,6 +33,18 @@
   opacity: .65;
 }
 
+.link {
+  text-decoration: none;
+  color: #333333;
+  transition: 200ms opacity;
+
+  &:focus,
+  &:hover {
+    opacity: .6;
+    border-color: #FFFFFF;
+  }
+}
+
 @media (min-width: 600px) {
   .item {
     width: 48%;
