@@ -31,6 +31,15 @@ export default function Catalog () {
 
       catalog = catalog.slice(0, 19);
 
+      // Sort by title
+      catalog.sort((a, b) =>
+        a.title > b.title
+          ? 1
+          : a.title < b.title
+            ? -1
+            : 0
+      );
+
       setCatalog(catalog);
 
       setIsLoading(false);
