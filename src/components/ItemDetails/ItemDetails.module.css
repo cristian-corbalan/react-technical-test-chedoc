@@ -1,0 +1,16 @@
+.imgContainer {
+  margin-bottom: 1.5rem;
+  img {
+    width: 100%;
+  }
+}
+.title {
+  margin-bottom: .5rem;
+}
+.date{
+  opacity: .65;
+  margin-bottom: 1rem;
+}
+.description{
+  line-height: 1.6em;
+}

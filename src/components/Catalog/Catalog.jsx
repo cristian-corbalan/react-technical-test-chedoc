@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import CatalogList from '../CatalogList/CatalogList.jsx';
-import Modal from '../Modal/Modal.jsx';
+import ItemDetails from '../ItemDetails/ItemDetails.jsx';
 import styles from './Catalog.module.css';
 
 export default function Catalog () {
@@ -59,9 +59,7 @@ export default function Catalog () {
       {isLoading && <p>Fetching {section}...</p>}
       {!isLoading && <CatalogList onShowModal={handleShowModal} catalog={catalog}/>}
 
-      <Modal ref={modal}>
-        Content
-      </Modal>
+      <ItemDetails ref={modal}/>
     </main>
   );
 }

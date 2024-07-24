@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  section: 'home'
+  section: 'home',
+  details: null
 };
 
 const uiSlice = createSlice({
@@ -10,6 +11,9 @@ const uiSlice = createSlice({
   reducers: {
     changeSection (state, action) {
       state.section = action.payload;
+    },
+    showDetails (state, action) {
+      state.details = action.payload;
     }
   }
 });
